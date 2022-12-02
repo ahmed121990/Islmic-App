@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:untitled5/Home/Quran/Vesre%20Widget.dart';
 
 class SuraDetails extends StatefulWidget {
   static const String routename = 'suradetails';
@@ -17,7 +18,7 @@ class _SuraDetailsState extends State<SuraDetails> {
         (ModalRoute.of(context)?.settings.arguments) as SuraDetailsArgs;
     // print(args.index);
     // print(args.name);
-    readFile(args.index);
+    if (varses.isEmpty) readFile(args.index);
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
@@ -29,11 +30,17 @@ class _SuraDetailsState extends State<SuraDetails> {
         body: Container(
           child: varses.isEmpty
               ? Center(child: CircularProgressIndicator())
-              : ListView.builder(
-                  itemBuilder: (_, index) {
-                    return Text(varses[index]);
-                  },
-                  itemCount: varses.length,
+              : Card(
+                  elevation: 12,
+                  margin: EdgeInsets.symmetric(horizontal: 24, vertical: 64),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
+                  child: ListView.builder(
+                    itemBuilder: (_, index) {
+                      return VerseWidget(varses[index], index + 1);
+                    },
+                    itemCount: varses.length,
+                  ),
                 ),
         ),
       ),
@@ -43,7 +50,7 @@ class _SuraDetailsState extends State<SuraDetails> {
   void readFile(int index) async {
     String content =
         await rootBundle.loadString('assets/sura/${index + 1}.txt');
-    var lines = content.split('\n');
+    var lines = content.trim().split('\n');
 
     setState(() {
       varses = lines;

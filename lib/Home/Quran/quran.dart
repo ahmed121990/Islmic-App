@@ -132,19 +132,37 @@ class Quran extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Center(child: Image(
-          image: AssetImage('assets/images/Screenshot (1).png'), height: 140,)),
-        Expanded(child: ListView.separated(itemBuilder: (buildContext, index) {
-          return SuraNameWidget(SuraName[index], index);
-        }, itemCount: SuraName.length,
+        const Center(
+            child: Image(
+          image: AssetImage('assets/images/Screenshot (1).png'),
+          height: 140,
+        )),
+        Container(
+          color: Theme.of(context).primaryColor,
+          height: 2,
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+              child: Text('أسم السوره',
+                  style: Theme.of(context).textTheme.headline4)),
+        ),
+        Container(
+          color: Theme.of(context).primaryColor,
+          height: 2,
+        ),
+        Expanded(
+            child: ListView.separated(
+          itemBuilder: (buildContext, index) {
+            return SuraNameWidget(SuraName[index], index);
+          },
+          itemCount: SuraName.length,
           separatorBuilder: (_, index) {
             return Container(
               margin: EdgeInsets.symmetric(horizontal: 30),
               height: 1,
               width: double.infinity,
-              color: Theme
-                  .of(context)
-                  .primaryColor,
+              color: Theme.of(context).primaryColor,
             );
           },
         ))

@@ -19,9 +19,7 @@ class SuraNameWidget extends StatelessWidget {
         margin: EdgeInsets.symmetric(vertical: 4),
         child: Text(
           title,
-          style: TextStyle(
-            fontSize: 28,
-          ),
+          style: Theme.of(context).textTheme.headline4,
         ),
       ),
     );

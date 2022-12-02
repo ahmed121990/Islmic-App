@@ -20,11 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/bg3.png'), fit: BoxFit.fill)),
+              image: AssetImage('assets/images/bg.png'), fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(title: const Text('Islami')),
         bottomNavigationBar: Theme(
-          data: MyTheme.lightTheme.copyWith(canvasColor: MyTheme.priamrycolor),
+          data: MyTheme.DarkTheme.copyWith(canvasColor: MyTheme.Darkprimary),
           child: BottomNavigationBar(
             currentIndex: selectedindex,
             onTap: (index) {
