@@ -29,7 +29,7 @@ class _HadethState extends State<Hadeth> {
                 margin: EdgeInsets.symmetric(horizontal: 30),
                 height: 1,
                 width: double.infinity,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).accentColor,
               );
             },
           ),

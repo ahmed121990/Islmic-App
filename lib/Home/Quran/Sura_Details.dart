@@ -22,7 +22,7 @@ class _SuraDetailsState extends State<SuraDetails> {
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/bg3.png'), fit: BoxFit.fill)),
+              image: AssetImage('assets/images/bg.png'), fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
           title: Text(args.name),

@@ -138,7 +138,7 @@ class Quran extends StatelessWidget {
           height: 140,
         )),
         Container(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
           height: 2,
         ),
         Padding(
@@ -148,7 +148,7 @@ class Quran extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline4)),
         ),
         Container(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
           height: 2,
         ),
         Expanded(
@@ -162,7 +162,7 @@ class Quran extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 30),
               height: 1,
               width: double.infinity,
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).accentColor,
             );
           },
         ))

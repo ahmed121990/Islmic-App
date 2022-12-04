@@ -3,6 +3,7 @@ import 'package:untitled5/Home/Hadeth/hadeth.dart';
 import 'package:untitled5/Home/Quran/quran.dart';
 import 'package:untitled5/Home/Radio/radio.dart';
 import 'package:untitled5/Home/Sebaha/sebha.dart';
+import 'package:untitled5/Home/settings/Seetings_tab.dart';
 import 'package:untitled5/Theme.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -51,6 +52,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   label: 'Hadeth',
                   icon: ImageIcon(AssetImage('assets/images/icon_hadeth.png'),
                       size: 48)),
+              BottomNavigationBarItem(
+                  label: 'Settings',
+                  icon: Icon(
+                    Icons.settings,
+                    size: 40,
+                  )),
             ],
           ),
         ),
@@ -59,5 +66,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  List<Widget> tabs = [Quran(), Sebha(), RadioTab(), Hadeth()];
+  List<Widget> tabs = [Quran(), Sebha(), RadioTab(), Hadeth(), SettingsTab()];
 }

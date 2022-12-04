@@ -7,7 +7,15 @@ class MyTheme {
   static const Color Darkprimary = Color(0XFF0F1424);
   static const Color yellowcolor = Color(0XFFFACC1D);
   static final ThemeData lightTheme = ThemeData(
+    bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(18), topRight: Radius.circular(18)))),
+    cardColor: Colors.white,
+    accentColor: priamrycolor,
     textTheme: const TextTheme(
+      subtitle2: TextStyle(fontSize: 14, color: Colors.black),
       headline6: TextStyle(fontSize: 22, color: Colors.black),
       headline4: TextStyle(fontSize: 28, color: Colors.black),
     ),
@@ -27,7 +35,15 @@ class MyTheme {
     primaryColor: priamrycolor,
   );
   static final ThemeData DarkTheme = ThemeData(
+    bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: Darkprimary,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(18), topRight: Radius.circular(18)))),
+    cardColor: Darkprimary,
+    accentColor: yellowcolor,
     textTheme: const TextTheme(
+      subtitle2: TextStyle(fontSize: 14, color: Colors.white),
       headline6: TextStyle(fontSize: 22, color: Colors.white),
       headline4: TextStyle(fontSize: 28, color: Colors.white),
     ),

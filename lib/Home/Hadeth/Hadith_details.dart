@@ -10,7 +10,7 @@ class HadithDetails extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/bg3.png'), fit: BoxFit.fill)),
+              image: AssetImage('assets/images/bg.png'), fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
           title: Text(args.title),
@@ -28,7 +28,7 @@ class HadithDetails extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   args.content,
-                  style: TextStyle(fontSize: 22),
+                  style: Theme.of(context).textTheme.headline6,
                   textDirection: TextDirection.rtl,
                 ),
               ))),

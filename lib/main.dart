@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         SuraDetails.routename: (_) => SuraDetails(),
         HadithDetails.routeName: (_) => HadithDetails()
       },
-      theme: MyTheme.DarkTheme,
+      theme: MyTheme.lightTheme,
       darkTheme: MyTheme.DarkTheme,
       themeMode: ThemeMode.dark,
     );

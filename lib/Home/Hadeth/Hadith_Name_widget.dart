@@ -19,9 +19,7 @@ class HadithWidget extends StatelessWidget {
         margin: EdgeInsets.symmetric(vertical: 4),
         child: Text(
           hadith.title,
-          style: TextStyle(
-            fontSize: 28,
-          ),
+          style: Theme.of(context).textTheme.headline4,
         ),
       ),
     );
