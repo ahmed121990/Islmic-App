@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 import 'package:untitled5/Home/Hadeth/hadeth.dart';
 import 'package:untitled5/Home/Quran/quran.dart';
 import 'package:untitled5/Home/Radio/radio.dart';
 import 'package:untitled5/Home/Sebaha/sebha.dart';
 import 'package:untitled5/Home/settings/Seetings_tab.dart';
-import 'package:untitled5/Theme.dart';
+import 'package:untitled5/Providers/Settings_provider/settinsprovider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routename = 'homescreen';
@@ -18,48 +20,52 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var settingsProvider = Provider.of<Settingsprovider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/bg.png'), fit: BoxFit.fill)),
+              image: AssetImage(settingsProvider.getbackgroundimage()),
+              fit: BoxFit.fill)),
       child: Scaffold(
-        appBar: AppBar(title: const Text('Islami')),
-        bottomNavigationBar: Theme(
-          data: MyTheme.DarkTheme.copyWith(canvasColor: MyTheme.Darkprimary),
-          child: BottomNavigationBar(
-            currentIndex: selectedindex,
-            onTap: (index) {
-              setState(() {
-                selectedindex = index;
-              });
-            },
-            items: const [
-              BottomNavigationBarItem(
-                  label: 'Quran',
-                  icon: ImageIcon(
-                    AssetImage('assets/images/icon_quran.png'),
-                    size: 48,
-                  )),
-              BottomNavigationBarItem(
-                  label: 'Sebha',
-                  icon: ImageIcon(AssetImage('assets/images/icon_sebha.png'),
-                      size: 48)),
-              BottomNavigationBarItem(
-                  label: 'Radio',
-                  icon: ImageIcon(AssetImage('assets/images/icon_radio.png'),
-                      size: 48)),
-              BottomNavigationBarItem(
-                  label: 'Hadeth',
-                  icon: ImageIcon(AssetImage('assets/images/icon_hadeth.png'),
-                      size: 48)),
-              BottomNavigationBarItem(
-                  label: 'Settings',
-                  icon: Icon(
-                    Icons.settings,
-                    size: 40,
-                  )),
-            ],
-          ),
+        appBar: AppBar(title: Text(AppLocalizations.of(context)!.app_tittle)),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: selectedindex,
+          onTap: (index) {
+            setState(() {
+              selectedindex = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+                backgroundColor: Theme.of(context).primaryColor,
+                label: AppLocalizations.of(context)!.quran,
+                icon: ImageIcon(
+                  AssetImage('assets/images/icon_quran.png'),
+                  size: 48,
+                )),
+            BottomNavigationBarItem(
+                backgroundColor: Theme.of(context).primaryColor,
+                label: AppLocalizations.of(context)!.mention,
+                icon: ImageIcon(AssetImage('assets/images/icon_sebha.png'),
+                    size: 48)),
+            BottomNavigationBarItem(
+                backgroundColor: Theme.of(context).primaryColor,
+                label: AppLocalizations.of(context)!.radio,
+                icon: ImageIcon(AssetImage('assets/images/icon_radio.png'),
+                    size: 48)),
+            BottomNavigationBarItem(
+                backgroundColor: Theme.of(context).primaryColor,
+                label: AppLocalizations.of(context)!.hadith,
+                icon: ImageIcon(AssetImage('assets/images/icon_hadeth.png'),
+                    size: 48)),
+            BottomNavigationBarItem(
+                backgroundColor: Theme.of(context).primaryColor,
+                label: AppLocalizations.of(context)!.settings,
+                icon: Icon(
+                  Icons.settings,
+                  size: 40,
+                )),
+          ],
         ),
         body: tabs[selectedindex],
       ),
