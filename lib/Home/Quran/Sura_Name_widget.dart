@@ -32,9 +32,11 @@ class SuraNameWidget extends StatelessWidget {
                   ),
                 ),
                 Center(
-                  child: Text(
-                    times,
-                    style: Theme.of(context).textTheme.headline4,
+                  child: Center(
+                    child: Text(
+                      times,
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
                   ),
                 ),
               ],

@@ -277,7 +277,7 @@ class Quran extends StatelessWidget {
         Expanded(
             child: ListView.separated(
           itemBuilder: (buildContext, index) {
-            return SuraNameWidget(SuraNumber[index], SuraName[index], index);
+            return SuraNameWidget(SuraName[index], SuraNumber[index], index);
           },
           itemCount: SuraName.length,
           separatorBuilder: (_, index) {
